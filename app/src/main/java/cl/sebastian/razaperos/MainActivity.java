@@ -39,7 +39,17 @@ import android.os.Bundle;
 []● Realizar test unitarios en el presentador
 
  */
+/*
+Parte I - Modelo de la app
+1. Creación del modelo de la aplicación. Al final de este documento se adjunta el
+diagrama del modelo.
+● Crear los POJOS necesarios para recibir la información de la API.
+● Crear el POJOS necesario para subir la colección de favoritos a FireStore
+(raza, url, timeStamp).
+○ Observación: Obtener el TimeStamp en formato String.
+2. Crear item_list_XXX.xml que correspondan a cada elemento a mostrar.
 
+ */
 
 
 public class MainActivity extends AppCompatActivity {
