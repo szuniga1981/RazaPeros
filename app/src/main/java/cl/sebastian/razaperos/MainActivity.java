@@ -48,7 +48,14 @@ diagrama del modelo.
 (raza, url, timeStamp).
 ○ Observación: Obtener el TimeStamp en formato String.
 2. Crear item_list_XXX.xml que correspondan a cada elemento a mostrar.
-
+3. Crear los Fragmentos necesarios:
+● Listado de razas.
+● Detalles.
+● Listado de favoritos (opcional).
+4. Mostrar en un fragmento el RecyclerView con el listado de razas.
+5. Mostrar en un fragmento el RecyclerView con el listado de fotos de la raza
+seleccionada.
+6. Crear los adapters que serán necesarios para transformar los distintos DataSet.
  */
 
 
