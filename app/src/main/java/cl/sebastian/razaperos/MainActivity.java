@@ -4,6 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+/*
+*tareas
+*[x] dependencias Retrofit y databinding.
+*
+ */
+
 // Descripción
 /* []   1. Muestre un listado de razas de perritos.
    []   2. Al seleccionar una raza de perritos, muestre un listado de fotos de perros de esa raza.
@@ -13,8 +19,8 @@ import android.os.Bundle;
 
 //Requerimientos generales
 /*
-[]● La prueba puede ser realizada en forma individual o grupal de máximo 3 integrantes.
-[]● Crear una aplicación Android nativa en lenguaje Java.
+
+
 []● Utilizar un patrón de diseño MVP.
 []● Utilizar un sistema de control de versiones(Git). Como mínimo un un commit por parte.
 []● Respetar las convenciones de nombres Java, y seguir las buenas practicas recomendadas.
