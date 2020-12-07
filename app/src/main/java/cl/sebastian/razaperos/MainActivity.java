@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import cl.sebastian.razaperos.model.Repositorio;
+
 /*
 *tareas
 *[x] dependencias Retrofit y databinding.
@@ -66,10 +68,11 @@ seleccionada.
 
 
 public class MainActivity extends AppCompatActivity {
-
+    private Repositorio repositorio = new Repositorio();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        repositorio.loadinfo();
     }
 }
