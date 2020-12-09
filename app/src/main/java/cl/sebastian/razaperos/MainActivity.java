@@ -1,10 +1,19 @@
 package cl.sebastian.razaperos;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import cl.sebastian.razaperos.model.Repositorio;
+import cl.sebastian.razaperos.presenter.Presenter;
+import cl.sebastian.razaperos.presenter.PresenterView;
+import cl.sebastian.razaperos.view.RazaAdapter;
 
 /*
 *tareas
@@ -67,12 +76,29 @@ seleccionada.
  */
 
 
-public class MainActivity extends AppCompatActivity {
-    private Repositorio repositorio = new Repositorio();
+public class MainActivity extends AppCompatActivity implements PresenterView {
+    private static final String TAG = "Main Activity";
+
+    private Presenter presenter;
+    private RecyclerView reciclerview;
+    private RazaAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        repositorio.loadinfo();
+        presenter=new Presenter(this,new Repositorio());
+        adapter = new RazaAdapter(new ArrayList<>());
+        reciclerview=findViewById(R.id.viewRecycler);
+        reciclerview.setLayoutManager(new LinearLayoutManager(getParent()));
+        reciclerview.setAdapter(adapter);
+
+
+    }
+
+    @Override
+    public void showInfo(List<String> listaPerros) {
+        Log.d(TAG, "showInfo: Mostrar la info en main activity"+listaPerros.toString());
+        adapter.update(listaPerros);
     }
 }

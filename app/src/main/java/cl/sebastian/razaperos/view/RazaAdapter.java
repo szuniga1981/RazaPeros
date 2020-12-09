@@ -1,5 +1,6 @@
 package cl.sebastian.razaperos.view;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +13,18 @@ import java.util.List;
 
 import cl.sebastian.razaperos.R;
 import cl.sebastian.razaperos.model.Raza;
-import cl.sebastian.razaperos.model.Repositorio;
 
 public class RazaAdapter extends RecyclerView.Adapter<RazaAdapter.RazaVH> {
 
-    private final List<Raza> razas;
+
+    private static final String TAG ="Raza adapter" ;
+    private final List<String> razas;
 
 
 
 
-    public RazaAdapter(List<Raza> razas) {
+
+    public RazaAdapter(List<String> razas) {
         this.razas = razas;
     }
 
@@ -35,8 +38,9 @@ public class RazaAdapter extends RecyclerView.Adapter<RazaAdapter.RazaVH> {
 
     @Override
     public void onBindViewHolder(@NonNull RazaAdapter.RazaVH holder, int position) {
-    Raza raza = razas.get(position);
-    holder.Bind(raza);
+        Log.d(TAG, "onBindViewHolder: "+razas.get(position));
+    String raza = razas.get(position);
+    holder.bind(raza);
 
     }
 
@@ -45,15 +49,22 @@ public class RazaAdapter extends RecyclerView.Adapter<RazaAdapter.RazaVH> {
         return razas.size();
     }
 
+    public void update(List<String> listaPerros) {
+        razas.clear();
+        razas.addAll(listaPerros);
+        notifyDataSetChanged();
+    }
+
     public class RazaVH extends RecyclerView.ViewHolder {
-        private TextView tvList;
+        private TextView tvList; //crea la vista
         public RazaVH(@NonNull View itemView) {
             super(itemView);
-            tvList= itemView.findViewById(R.id.tvList);
+            tvList= itemView.findViewById(R.id.tvList);//inicialzar la vista
         }
 
-        public void Bind(Raza r) {
-            tvList.setText(r.getStatus());
+        public void bind(String r) {
+            Log.d(TAG, "bind: "+r);
+            tvList.setText(r);
 
         }
 

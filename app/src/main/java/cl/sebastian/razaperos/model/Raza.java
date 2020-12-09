@@ -14,8 +14,8 @@ public class Raza {
         this.message = message;
     }
 
-    public String getStatus() {
-        return status;
+    public Raza getStatus() {
+        return null;
     }
 
     public void setStatus(String status) {
