@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cl.sebastian.razaperos.model.Repositorio;
-import cl.sebastian.razaperos.PresenterRaza.Presenter;
-import cl.sebastian.razaperos.PresenterRaza.PresenterView;
+import cl.sebastian.razaperos.presenterRaza.Presenter;
+import cl.sebastian.razaperos.presenterRaza.PresenterView;
 import cl.sebastian.razaperos.view.RazaAdapter;
 
 /*
