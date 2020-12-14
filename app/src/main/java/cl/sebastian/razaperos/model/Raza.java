@@ -9,6 +9,7 @@ public class Raza {
     private String status;
     private List<String> message;
 
+
     public Raza(String status, List<String> message) {
         this.status = status;
         this.message = message;

@@ -1,13 +1,17 @@
 package cl.sebastian.razaperos.view;
 
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -24,8 +28,12 @@ public class RazaAdapter extends RecyclerView.Adapter<RazaAdapter.RazaVH> {
 
 
 
+
+
+
     public RazaAdapter(List<String> razas) {
         this.razas = razas;
+
     }
 
 
@@ -57,14 +65,23 @@ public class RazaAdapter extends RecyclerView.Adapter<RazaAdapter.RazaVH> {
 
     public class RazaVH extends RecyclerView.ViewHolder {
         private TextView tvList; //crea la vista
+       // private ImageView imgBreed;
+        //private Context context;
         public RazaVH(@NonNull View itemView) {
+
             super(itemView);
+
+
             tvList= itemView.findViewById(R.id.tvList);//inicialzar la vista
+           // imgBreed=itemView.findViewById(R.id.imageView);
+            //context=itemView.getContext();
         }
 
         public void bind(String r) {
             Log.d(TAG, "bind: "+r);
+
             tvList.setText(r);
+           // Glide.with(context).load(r);
 
         }
 

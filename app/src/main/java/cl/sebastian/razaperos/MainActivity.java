@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cl.sebastian.razaperos.model.Repositorio;
-import cl.sebastian.razaperos.presenter.Presenter;
-import cl.sebastian.razaperos.presenter.PresenterView;
+import cl.sebastian.razaperos.PresenterRaza.Presenter;
+import cl.sebastian.razaperos.PresenterRaza.PresenterView;
 import cl.sebastian.razaperos.view.RazaAdapter;
 
 /*
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements PresenterView {
     private Presenter presenter;
     private RecyclerView reciclerview;
     private RazaAdapter adapter;
-
+    private Repositorio repositorio=new Repositorio();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements PresenterView {
         reciclerview=findViewById(R.id.viewRecycler);
         reciclerview.setLayoutManager(new LinearLayoutManager(getParent()));
         reciclerview.setAdapter(adapter);
+
 
 
     }

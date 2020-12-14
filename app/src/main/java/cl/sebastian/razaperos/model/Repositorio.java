@@ -8,6 +8,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.Path;
 
 public class Repositorio {
 
@@ -36,6 +37,28 @@ public class Repositorio {
 
             }
         });
+
+
     }
+    public void loadInfoImage(String breed){
+
+        RetrofitClient.getRetrofitInstance().getImageDetails(breed).enqueue(new Callback<Image>() {
+            @Override
+            public void onResponse(Call<Image> call, Response<Image> response) {
+                Log.d(TAG, "onResponse:loadInfoImage "+response.body());
+
+                //List<String> listaIamgenes = new ArrayList<>();
+
+            }
+
+            @Override
+            public void onFailure(Call<Image> call, Throwable t) {
+                Log.d(TAG, "onFailure:loadInfoImage "+t.toString());
+
+            }
+        });
+    }
+
+
 
 }
